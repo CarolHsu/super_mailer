@@ -1,0 +1,22 @@
+{
+  "name": "super_mailer",
+  "version": "1.0.0",
+  "description": "This is a mail API interface that connect major mail services from Node.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CarolHsu/super_mailer.git"
+  },
+  "keywords": [
+    "mailer"
+  ],
+  "author": "shesee <sheseee@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CarolHsu/super_mailer/issues"
+  },
+  "homepage": "https://github.com/CarolHsu/super_mailer#readme"
+}
