@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/CarolHsu/super_mailer/issues"
   },
-  "homepage": "https://github.com/CarolHsu/super_mailer#readme"
+  "homepage": "https://github.com/CarolHsu/super_mailer#readme",
+  "dependencies": {
+    "request": "^2.81.0"
+  }
 }
