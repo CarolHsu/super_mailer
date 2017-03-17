@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/CarolHsu/super_mailer#readme",
   "dependencies": {
-    "request": "^2.81.0"
+    "request": "^2.81.0",
+    "sendgrid": "^4.8.2"
   }
 }
