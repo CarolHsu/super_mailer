@@ -1,5 +1,5 @@
 var assert = require('assert');
-var api = require('../../lib/sendgrid.js');
+var mailer = require('../../lib/mailer.js');
 describe('#send', function(){
     var from_email, to_email, title, content, api;
     beforeEach(function() {
@@ -7,6 +7,6 @@ describe('#send', function(){
         to_email = "test@example.com";
         subject = "Sending with SendGrid is Fun";
         content = "and easy to do anywhere, even with Node.js";
-        res = api.send(from_email, to_email, subject, content);
+        //mailer.send(from_email, to_email, subject, content);
     });
 });
