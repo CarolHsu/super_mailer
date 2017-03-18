@@ -16,10 +16,10 @@ After sign up those services and get the neccessary API Key settings, then you c
 
 ```
 $ npm install super_mailer
-$ touch mailer.env
+$ cp mailer.env.example mailer.env
 ```
 
-Information you should put in your ```mailer.env```
+Information you should fill in your ```mailer.env```
 
 ```
 export SENDGRID_API_KEY='<SENDGRID_API_KEY>'
