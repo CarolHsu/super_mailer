@@ -4,26 +4,22 @@ describe('builder', function(){
     describe('Amazon SES', function() {
         var from_email, to_email, title, content, body;
         beforeEach(function() {
-            from_email = "test@example.com";
-            to_email = "test@example.com";
+            from_email = process.env.AMZSES_VALID_MAILBOX;
+            to_email = "success@simulator.amazonses.com";
             subject = "Sending with Amazon SES is Fun";
             content = "and easy to do anywhere, even with Node.js";
+            body = {
+                'Action': 'SendEmail',
+                'Source': from_email,
+                'Destination.ToAddresses.member.1': to_email,
+                'Message.Body.Text.Data': content,
+                'Message.Subject.Data': subject
+            };
+            qs = require('querystring').stringify(body);
             options = builder(from_email, to_email, subject, content);
         });
-        it('should include #Action', function(){
-            assert.equal('SendEmail', options.json.Action);
-        });
-        it('should include valid #from_email, which setup in env variables', function(){
-            assert.equal(process.env.AMZSES_VALID_MAILBOX, options.json.Source);
-        });
-        it('should include #to_email', function(){
-            assert.equal(to_email, options.json.Destination.ToAddresses[0]);
-        });
-        it('should include #subject', function(){
-            assert.equal(subject, options.json.Message.Subject.Data);
-        });
-        it('should include #content', function(){
-            assert.equal(content, options.json.Message.Body.Text.Data);
+        it('should include query string', function(){
+            assert.equal(qs, options.url.split("?")[1]);
         });
         it('should have Date in headers', function(){
             now = (new Date()).toUTCString();
@@ -41,8 +37,7 @@ describe('builder', function(){
         });
         it('should include correct endpoint', function() {
             host = 'email.us-east-1.amazonaws.com';
-            uri = '/'
-            url = 'https://' + host + uri;
+            url = 'https://' + host + '?' + qs;
             assert.equal(url, options.url);
         });
         it('the HTTP method should be "post"', function () {
