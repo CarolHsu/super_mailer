@@ -12,7 +12,7 @@ super_mailer is a multiple mail service API connector, include AWS SES, Sendgrid
 After sign up those services and get the neccessary API Key settings, then you can start to use super_mailer then :)
 
 
-# Install
+# Installation
 
 ```
 $ npm install super_mailer
@@ -49,3 +49,13 @@ super_mailer(from_email, to_email, subject, content);
 ```
 
 You can choose your prefer default_service, such as ```'sendgrid'```, ```'mailgun'```, ```'mandrill'``` and ```'amazonses'```
+
+
+# Tests
+
+Now, you can test all builders of mail services by
+
+```
+$ npm test
+```
+
