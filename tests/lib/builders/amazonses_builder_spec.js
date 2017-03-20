@@ -1,5 +1,6 @@
 var assert = require('assert');
 var builder = require('../../../lib/builders/amazonses_builder.js');
+var config = require('config');
 describe('builder', function(){
     describe('Amazon SES', function() {
         var from_email, to_email, title, content, body;
@@ -16,7 +17,7 @@ describe('builder', function(){
                 'Message.Subject.Data': subject
             };
             qs = require('querystring').stringify(body);
-            options = builder(from_email, to_email, subject, content);
+            options = builder(from_email, to_email, subject, content, config);
         });
         it('should include query string', function(){
             assert.equal(qs, options.url.split("?")[1]);

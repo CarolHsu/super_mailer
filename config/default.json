@@ -1,0 +1,35 @@
+{
+    "default": "mailgun",
+    "amazonses": {
+        "stub": {
+            "to_email": "success@simulator.amazonses.com",
+            "subject": "Welcome to Amazon SES",
+            "content": "Enjoy it!"
+        }
+    },
+    "sendgrid": {
+        "endpoint": "https://api.sendgrid.com/v3/mail/send",
+        "stub": {
+            "from_email": "test@example.com",
+            "to_email": "test@example.com",
+            "subject": "Welcome to Sendgrid",
+            "content": "Enjoy it!"
+        }
+    },
+    "mandrill": {
+        "endpoint": "https://mandrillapp.com/api/1.0/messages/send.json",
+        "stub": {
+            "from_email": "test@example.com",
+            "to_email": "test@example.com",
+            "subject": "Welcome to Mandrill",
+            "content": "Enjoy it!"
+        }
+    },
+    "mailgun": {
+        "stub": {
+            "to_email": "test@example.com",
+            "subject": "Welcome to Mailgun",
+            "content": "Enjoy it!"
+        }
+    }
+}

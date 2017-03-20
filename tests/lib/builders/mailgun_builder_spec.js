@@ -1,5 +1,6 @@
 var assert = require('assert');
 var builder = require('../../../lib/builders/mailgun_builder.js');
+var config = require('config');
 describe('builder', function(){
     describe('MailGun', function() {
         var from_email, to_email, title, content, body;
@@ -8,7 +9,7 @@ describe('builder', function(){
             to_email = "test@example.com";
             subject = "Sending with MailGun is Fun";
             content = "and easy to do anywhere, even with Node.js";
-            options = builder(from_email, to_email, subject, content);
+            options = builder(from_email, to_email, subject, content, config);
         });
         it('should include #from_email, and set in env variable MAILGUN_SAND_BOX', function(){
             assert.equal(process.env.MAILGUN_SAND_BOX, options.form.from);
