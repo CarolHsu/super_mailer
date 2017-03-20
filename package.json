@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/CarolHsu/super_mailer#readme",
   "dependencies": {
+    "config": "^1.25.1",
     "request": "^2.81.0"
   }
 }
