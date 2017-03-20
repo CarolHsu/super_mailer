@@ -1,6 +1,6 @@
 {
   "name": "super_mailer",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "This is a mail API interface that connect major mail services from Node.js",
   "main": "index.js",
   "scripts": {
