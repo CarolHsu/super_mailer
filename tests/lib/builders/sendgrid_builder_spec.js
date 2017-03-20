@@ -1,5 +1,6 @@
 var assert = require('assert');
 var builder = require('../../../lib/builders/sendgrid_builder.js');
+var config = require('config');
 describe('builder', function(){
     describe('SendGrid', function() {
         var from_email, to_email, title, content, body;
@@ -8,7 +9,7 @@ describe('builder', function(){
             to_email = "test@example.com";
             subject = "Sending with SendGrid is Fun";
             content = "and easy to do anywhere, even with Node.js";
-            options = builder(from_email, to_email, subject, content);
+            options = builder(from_email, to_email, subject, content, config);
         });
         it('should include #from_email', function(){
             assert.equal(from_email, options.body.from.email);

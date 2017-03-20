@@ -51,6 +51,59 @@ super_mailer(from_email, to_email, subject, content);
 You can choose your prefer default_service, such as ```'sendgrid'```, ```'mailgun'```, ```'mandrill'``` and ```'amazonses'```
 
 
+# Configuration
+
+You can also setup default service / stub email addresses for testing in ```config/default.json```.
+
+Modify the example data below:
+
+```
+{
+    "default": "mandrill",
+    "amazonses": {
+        "stub": {
+            "to_email": "success@simulator.amazonses.com",
+            "subject": "Welcome to Amazon SES",
+            "content": "Enjoy it!"
+        }
+    },
+    "sendgrid": {
+        "endpoint": "https://api.sendgrid.com/v3/mail/send",
+        "stub": {
+            "from_email": "test@example.com",
+            "to_email": "test@example.com",
+            "subject": "Welcome to Sendgrid",
+            "content": "Enjoy it!"
+        }
+    },
+    "mandrill": {
+        "endpoint": "https://mandrillapp.com/api/1.0/messages/send.json",
+        "stub": {
+            "from_email": "test@example.com",
+            "to_email": "test@example.com",
+            "subject": "Welcome to Mandrill",
+            "content": "Enjoy it!"
+        }
+    },
+    "mailgun": {
+        "stub": {
+            "to_email": "test@example.com",
+            "subject": "Welcome to Mailgun",
+            "content": "Enjoy it!"
+        }
+    }
+}
+```
+
+Then you can test your mailing setting for each service by
+
+```
+var super_mailer = require('super_mailer');
+mailer();
+```
+
+to get response results easily.
+
 # Tests
 
 Now, you can test all builders of mail services by
